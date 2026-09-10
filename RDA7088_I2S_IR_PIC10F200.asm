@@ -1,6 +1,6 @@
 ;*******************************************************************************
 ; FILE:      PIC10F200+RDA7088+IR+I2S.asm                                      *
-; CONTENTS:  RDA7088N + I²C + I²S + NEC IR REMOTE Control                      *
+; CONTENTS:  RDA7088N + IÂ²C + IÂ²S + NEC IR REMOTE Control                      *
 ; EDITOR:    mit41301                                                          *
 ; UPDATED:   12/12/22                                                          *
 ;*******************************************************************************
@@ -42,8 +42,8 @@ RAM_
      	error "File register usage overflow"
      	endif
 ;###############################################################################
-SCL        EQU    GP1    ;SCL pin of the I²C Bus
-SDA        EQU    GP2    ;SDA pin of the I²C Bus
+SCL        EQU    GP1    ;SCL pin of the IÂ²C Bus
+SDA        EQU    GP2    ;SDA pin of the IÂ²C Bus
 IRx        EQU    GP3    ;INPUT ONLY PIN(IR Rx 38kHz)
 ;###############################################################################
 ;volume_init EQU 0x03 | 0x80; Initial Volume = 3 // [0..15]
@@ -81,7 +81,7 @@ INIT:
 ;DEFAULT STARTING:        ;Reading the stored data from EEPROM
 
  	movlw volume_init ;0x83
- 	movlw volume
+ 	movwf volume
  	movlw freqL ;0x40 ;91.90 MHz
  	movwf frequency_l
  	movlw freqH ;0x0C ;91.90 MHz
